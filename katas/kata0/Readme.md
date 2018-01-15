@@ -11,5 +11,5 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
 ## Proceso de pensamiento para solucionar problema
-![alt text](kata0_1.jpg "Title")
-![alt text](kata0_2.jpg "Title")
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata0/kata0_1.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata0/kata0_2.JPG)
