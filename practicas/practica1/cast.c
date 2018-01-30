@@ -18,7 +18,7 @@ int main() {
         p++;
     }
 
-    printf(" a = %p, a = %d, j = %d, b = %d, d= %ld \n", p, a, j, b, d);
+    printf(" p = %p, a = %d, j = %d, b = %d, d= %ld \n", p, a, j, b, d);
     printf(" f = %f, c = %f, arreglo[1] = %d \n", f, c, arreglo[1]);
 
     return 0;
