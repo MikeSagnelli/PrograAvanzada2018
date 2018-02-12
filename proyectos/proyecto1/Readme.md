@@ -36,15 +36,22 @@ The first line should contain a single word YES or NO signalling whether the win
 
 #### Sample
 
-inputoutput
+input
 
  
 
 6C QD 6S KS 7S *
+
+
 *QHS
  
+output
+
+
 
 YES
+
+
 7S KS 6S 6C *6D QDS
 
 #### Notes

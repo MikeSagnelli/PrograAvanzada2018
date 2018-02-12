@@ -40,6 +40,11 @@ int main(){
         cards[j++] = p;
         p = strtok(NULL, " ");
     }
+    // If the number of cards is more than 16 print No already.
+    if(nCards > 16){
+        printf("%s\n", sentences[1]);
+        return 0;
+    }
     // -------------------------------------------------------------
     // Define a hash table of our 53 different types of cards.
     hashtable_t *deck = defineHashArrayOfCards(sentences);
@@ -64,7 +69,7 @@ int main(){
         }
     }
     if(nNotHaltingCards > 1){
-        printf("NO\n");
+        printf("%s\n", sentences[1]);
         return 0;
     }
     // -------------------------------------------------------------
