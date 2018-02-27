@@ -3,13 +3,20 @@
 #include <string.h>
 #include "hash.h"
 
-void initHash(Hash *myHash, unsigned size, unsigned (* hash) (void *, unsigned)){
+void initHash(Hash *myHash, unsigned size, 
+              unsigned (* hash ) (void *, unsigned),
+              int (*cmpKeys)(void *, void *),
+              void *(*copyKey)(void *),
+              void *(*copyValue)(void *)){
     myHash->size = size;
     myHash->hash = hash;
     myHash->data = (Vector *)calloc(size, sizeof(Vector));
+    myHash->copyKey = copyKey;
+    myHash->copyValue = copyValue;
+    myHash->cmpKeys = cmpKeys;
 }
 
-void insertHash(Hash *myHash, void *key, void *value,  void * (*caster)(void *)){
+void insertHash(Hash *myHash, void *key, void *value){
     unsigned pos = myHash->hash(key, myHash->size);
     if(myHash->data[pos].size == 0){
         myHash->data[pos].size = 0;
@@ -23,17 +30,17 @@ void insertHash(Hash *myHash, void *key, void *value,  void * (*caster)(void *))
     }
 
     unsigned elementPos = myHash->data[pos].count;
-    myHash->data[pos].elements[elementPos].key = caster(key);
-    myHash->data[pos].elements[elementPos].value = caster(value);
+    myHash->data[pos].elements[elementPos].key = myHash->copyKey(key);
+    myHash->data[pos].elements[elementPos].value = myHash->copyValue(value);
     myHash->data[pos].count += 1;
 }
 
-void *getHash(Hash *myHash, void *key, void *(*caster)(void *), int (*cmpKeys)(void *, void *)){
+void *getHash(Hash *myHash, void *key){
     unsigned pos = myHash->hash(key, myHash->size);
     for (int i = 0; i < myHash->data[pos].count; i++)
     {
-        if(cmpKeys(key,myHash->data[pos].elements[i].key) == 0) {
-            return caster(myHash->data[pos].elements[i].value);
+        if(myHash->cmpKeys(key,myHash->data[pos].elements[i].key) == 0) {
+            return myHash->copyValue(myHash->data[pos].elements[i].value);
         } 
 
     }

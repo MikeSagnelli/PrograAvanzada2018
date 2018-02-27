@@ -13,8 +13,15 @@ typedef struct h{
     unsigned size;
     Vector * data;
     unsigned (* hash) (void *, unsigned);
+    int (*cmpKeys)(void *,void *);
+    void *(*copyKey)(void *);
+    void *(*copyValue)(void *);
 } Hash;
 
-void initHash(Hash *, unsigned, unsigned (* hash ) (void *, unsigned));
-void insertHash(Hash *, void *, void *, void * (*caster)(void *));
-void * getHash(Hash *,void *,void *(*caster)(void *),int (*cmpKeys)(void *, void *));
+void initHash(Hash *, unsigned, 
+              unsigned (* hash ) (void *, unsigned),
+              int (*cmpKeys)(void *, void *),
+              void *(*copyKey)(void *),
+              void *(*copyValue)(void *));
+void insertHash(Hash *, void *, void *);
+void * getHash(Hash *,void *);
