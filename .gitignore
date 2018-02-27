@@ -1,3 +1,4 @@
 *.exe
 tools/
 *.txt
+*.o

@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "minunit.h"
 #include "hash.h"
+
 
 #define KNRM  "\x1B[0m"
 #define KRED  "\x1B[31m"
@@ -14,13 +17,75 @@
 
 int testsRun = 0;
 
-static char * testUnit() {
-  muAssert("error, testUnit 1 != 1", 1 == 1);
+unsigned hash(void *key, unsigned size){
+  return 0;
+}
+
+void * caster(void *element){
+  char *realValue = (char *) element;
+  return(void *)strdup(realValue);
+}
+
+static char * testInsert() {
+  Hash myHash;
+  unsigned size = 4;
+  char * key = "Hello";
+  char * value = "Hola";
+  initHash(&myHash, size, hash);
+  insertHash(&myHash, (void *)key, (void *)value, caster);
+  muAssert("error, data[0].elements[0]", strcmp(myHash.data[0].elements[0].key, key) == 0);
+  muAssert("error, data[0].elements[0]", strcmp(myHash.data[0].elements[0].value, value) == 0);
+  
+  return 0;
+}
+
+int cmpKeys(void *e1, void *e2){
+  return strcmp((char *)e1, (char *)e2);
+}
+
+static char * testGet() {
+
+  Hash myHash;
+
+  unsigned size = 4;
+
+  char * key = "Hello";
+
+  char * value = "Hola";
+
+  initHash(&myHash, size, hash);
+
+  insertHash(&myHash, (void *)key, (void *)value, caster);
+
+  char * hashValue = (char *)getHash(&myHash, "Hello", caster,cmpKeys);
+
+  char * hashValue2 = (char *)getHash(&myHash, "adios",caster,cmpKeys);
+
+  muAssert("error, must be hola", strcmp((char *)hashValue,value) == 0);
+
+  muAssert("error, must be null", hashValue2 == NULL);
+
+  
+
+  return 0;
+
+}
+
+
+static char * testInit() {
+  Hash myHash;
+  unsigned size = 20;
+  initHash(&myHash, size, hash);
+  muAssert("error, hash size must be 20", myHash.size == size);
+  muAssert("error, hash() must be 0", myHash.hash(NULL, 0) == 0);
+  muAssert("error, data must be not NULL", myHash.data != NULL);
   return 0;
 }
 
 static char * allTests() {
-  muRunTest(testUnit);
+  muRunTest(testInit);
+  muRunTest(testInsert);
+  muRunTest(testGet);
   return 0;
 }
 
