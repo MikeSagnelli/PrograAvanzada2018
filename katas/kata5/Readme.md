@@ -12,5 +12,5 @@ Adam = adam
 
 ## Solution
 
-![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata4/kata5_1.JPG)
-![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata4/kata5_2.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata5/kata5_1.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata5/kata5_2.JPG)
