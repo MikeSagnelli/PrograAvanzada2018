@@ -10,7 +10,7 @@ are located in order to disarm the bombs. Unfortunately he has a limited
 
 Before each jump, the 
 heat-signature device will provide Batman with the direction of the 
-bombs based on Batman current position: ![Image](https://www.codingame.com/fileservlet?id=1429015102200)
+bombs based on Batman current position:
 
 - U (Up)
 - UR (Up-Right)
@@ -34,115 +34,6 @@ For some tests, **the bombs' location may change from one execution to the other
 
 The tests provided are similar to the validation tests used to compute the final score but remain different.
 
-###  Game Input
-
-The program must first read the initialization data 
-from standard input. Then, within an infinite loop, read the device data
- from the standard input and provide to the standard output the next 
-movement instruction.
-
-Initialization input
-
-Line 1 :  2 integers 
-
-W H. The (
-
-W, 
-
-H) couple represents the width and height of the building as a number of windows.
-
-Line 2 :  1 integer 
-
-N, which represents the number of jumps Batman can make before the bombs go off.
-
-Line 3 :  2 integers 
-
-X0
-
-Y0, representing the starting position of Batman.
-
-Input for one game turn
-
-The direction indicating where the bomb is.
-
-Output for one game turn
-
-A single line with 2 integers 
-
-X
-
-Y separated by a space character. (
-
-X, 
-
-Y) represents the location of the next window Batman should jump to. 
-
-X represents the index along the horizontal axis, 
-
-Y represents the index along the vertical axis. (0,0) is located in the top-left corner of the building.
-
-Constraints
-
-1 ≤ 
-
-W ≤ 10000  
-
-1 ≤ 
-
-H ≤ 10000  
-
-2 ≤ 
-
-N ≤ 100  
-
-0 ≤ 
-
-X, 
-
-X0 &lt; W  
-
-0 ≤ 
-
-Y, 
-
-Y0 &lt; H  
-
-Response time per turn ≤ 150ms  
-
-Response time per turn ≤ 150ms
-
-Example
-
-Initialization input
-
-10 10     _Building has 100 windows (10x10)_
-6         _Batman has 6 jumps to find the bombs_
-2 5       _Batman starts at position (2,5)_
-
-No output expected
-
-Input for turn 1
-
-UR
-_Hostages are in the upward-right direction_
-
-Output for turn 1
-
-5 4
-_Batman jumps to window (5,4)_
-
-Input for turn 2
-
-R
-_Hostages are located to the right of Batman_
-
-Output for turn 2
-
-7 4
-_Batman jumps to window (7,4)_
-
-_Batman found the hostages. He can defuse the bombs in time. You win!_
-
 ### Synopsis
 
 **Batman:** “_Come on Joker, give it up, I know you're hiding in here somewhere, you can't escape from me._”  
@@ -160,3 +51,12 @@ to save the poor, poor hostages? I'd hurry if I were you...Ha-ha-ha_”
  sir. I have the perfect device: it can track the bombs heat signature. 
 I'm sending it to you as soon as I'm done reprogramming it._”  
 **Joker:** “_So long Batman! Ha-ha-ha OH-OH-OH..._”
+
+## Solution
+
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata7/kata7_1.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata5/kata7_2.JPG)
+
+### Test cases passed!
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata5/kata7_3.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata5/kata7_4.JPG)
