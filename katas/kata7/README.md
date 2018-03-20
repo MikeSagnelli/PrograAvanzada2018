@@ -55,8 +55,8 @@ I'm sending it to you as soon as I'm done reprogramming it._”
 ## Solution
 
 ![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata7/kata7_1.JPG)
-![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata5/kata7_2.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata7/kata7_2.JPG)
 
 ### Test cases passed!
-![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata5/kata7_3.JPG)
-![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata5/kata7_4.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata7/kata7_3.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata7/kata7_4.JPG)
