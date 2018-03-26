@@ -89,3 +89,5 @@ For the solution I need a function that converts my angle from degrees to radian
 depending on the distance, and on the angle of the checkpoint. To obtain this requiredForce, I will use this formula. requiredForce = nextCheckpointDist * cos(angleInRad) * 0.15;
 
 Finally, I will use my boost when I have it, when the next checkpoint is further than 3000 units, and when the angle between my orientation, and the checkpoint is 0.
+
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata8/kata8_1.JPG)
