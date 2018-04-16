@@ -13,15 +13,15 @@ proc reset {} {exec tput sgr0 > /dev/tty}
 eval spawn [lrange $argv 0 end]
 
 #Put your test case here
-expect "How much time will the flight take? (in minutes) " {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "How much time will the flight take? (in minutes)" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "240\r"
-expect "How many movies are there in the list? " {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "How many movies are there in the list?" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "6\r"
-expect "Please write their lengths: " {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "Please write their lengths:" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
 send "60\r"
 send "140\r"
 send "160\r"
 send "120\r"
 send "100\r"
 send "70\r"
-expect "First movie: 140 minutes and Second movie: 100 minutes" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}
+expect "true" {foreground green; puts "PASSED";reset} default {foreground red;puts "FAILED";reset}

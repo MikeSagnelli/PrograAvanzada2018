@@ -9,3 +9,8 @@ When building your function:
 - Assume your users will watch _exactly_ two movies
 - Don't make your users watch the same movie twice
 - Optimize for runtime over memory
+
+## Solution
+
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata9/kata9_1.JPG)
+![alt text](https://github.com/MikeSagnelli/PrograAvanzada2018/blob/master/katas/kata9/kata9_2.JPG)

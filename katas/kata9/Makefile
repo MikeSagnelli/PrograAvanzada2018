@@ -1,13 +1,13 @@
 all:
-	gcc main.c -o movies.exe
+	gcc main.c hash.c -o movies.exe
 
 main:
-	gcc -c main.c
+	gcc -c main.c hash.c
 
 runtest:
-	gcc main.c -o movies.exe
+	gcc main.c hash.c -o movies.exe
 	./testmain.tcl ./movies.exe
 
 run:
-	gcc main.c -o movies.exe
+	gcc main.c hash.c -o movies.exe
 	./movies.exe
