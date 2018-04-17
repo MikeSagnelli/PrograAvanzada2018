@@ -3,8 +3,13 @@
 
 #define MAX_THREADS 20
 
-void *helloThread(void *){
-    printf("Hello world!");
+int global = 5;
+
+void *helloThread(void * arg){
+    long id = (long)arg;
+    global = id * global;
+    printf("Hello world! %ld\n", id);
+    return NULL;
 }
 
 int main(){
@@ -14,6 +19,12 @@ int main(){
             &threads[i],
             NULL,
             helloThread,
+            NULL
+        );
+    }
+    for(int i = 0; i < MAX_THREADS; i++){
+        pthread_join(
+            thread[i],
             NULL
         );
     }
